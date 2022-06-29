@@ -1,0 +1,38 @@
+<style>
+  iframe {
+    display: none;
+    width: 1100px;
+    height: 100%;
+    object-fit: contain;
+    position: absolute;
+    top: 0px;
+    left: 200px;
+  }
+</style>
+
+<nav>
+  <li id="enroll"><button>人力资源档案登记</button></li>
+  <li id="review"><button>人力资源档案复核</button></li>
+</nav>
+
+<main id="main">
+  <iframe id="iframe" src="" frameborder="0"></iframe>
+</main>
+
+<script>
+  const enroll = document.getElementById('enroll')
+  const review = document.getElementById('review')
+
+  enroll.onclick = change('enroll')
+  review.onclick = change('review')
+
+  function change (url) {
+    return function () {
+      const iframe = document.getElementById('iframe')
+      iframe.style.display = 'block'
+      iframe.src = url + '.html'
+    }
+  }
+
+
+</script>

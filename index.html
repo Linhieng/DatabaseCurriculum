@@ -1,0 +1,35 @@
+<style>
+  iframe {
+    width: 100%;
+    height: 100%;
+  }
+</style>
+
+<nav>
+  <li id="system-manage"><button>系统管理</button></li>
+  <li id="person-manage"><button>人力资源管理</button></li>
+  <li id="salary-manage"><button>薪酬管理</button></li>
+</nav>
+
+<main id="main">
+  <iframe id="iframe" src="" frameborder="0"></iframe>
+</main>
+
+<script>
+  const system_manage = document.getElementById('system-manage')
+  const person_manage = document.getElementById('person-manage')
+  const salary_manage = document.getElementById('salary-manage')
+
+  system_manage.onclick = change('manage_system')
+  person_manage.onclick = change('manage_person/index')
+  salary_manage.onclick = change('manage_salary')
+
+
+  function change (url) {
+    return function () {
+      const iframe = document.getElementById('iframe')
+      iframe.src = url + '.html'
+    }
+  }
+
+</script>
