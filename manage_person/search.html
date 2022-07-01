@@ -1,0 +1,72 @@
+<head>
+
+<style>
+  * {margin: 0; padding: 0;}
+  li {list-style: none;}
+
+  #iframe {
+    margin-top: 10px;
+    width: 100%;
+    height: 600px;
+  }
+
+  .table {
+    background-color: #d4f8d4;
+    --h: 30px;
+    padding: 5px;
+  }
+
+  .table > ul {
+    height: 30px;
+    margin: 10px 0;
+  }
+
+  li {
+    display: flex;
+    height: var(--h);
+  }
+
+  li > label {
+    width: 120px;
+    background-color: #8fdaab;
+    text-align: center;
+  }
+
+  li > select {
+    width: 200px;
+  }
+  li > input {
+    width: 90px;
+  }
+
+  li > label,
+  li > select,
+  li > input {
+    display: block;
+    height: var(--h);
+    line-height: var(--h);
+  }
+</style>
+</head>
+<h1>人力资源档案查询</h1>
+<button id="btn">查询</button>
+<div class="table">
+  <ul><li><label>一级机构</label><select><option>集团</option></select></li></ul>
+  <ul><li><label>二级机构</label><select><option>软件公司</option></select></li></ul>
+  <ul><li><label>三级机构</label><select><option>外包组</option></select></li></ul>
+  <ul><li><label>职位分类</label><select><option>销售</option></select></li></ul>
+  <ul><li><label>职位名称</label><select><option>区域经理</option></select></li></ul>
+  <ul><li><label>建档时间</label><input type="text"> 至 <input type="text"> （YYYY_MM_DD）</li></ul>
+</div>
+
+<iframe id="iframe" src="" frameborder="0"></iframe>
+
+
+<script>
+  const btn = document.getElementById('btn')
+  btn.onclick = () => {
+    document.body.removeChild(document.getElementsByClassName('table')[0])
+    document.body.removeChild(btn)
+    document.getElementById('iframe').src = './search-show.html'
+  }
+</script>

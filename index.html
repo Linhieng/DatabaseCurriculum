@@ -6,7 +6,7 @@
 </style>
 
 <nav>
-  <li id="system-manage"><button>系统管理</button></li>
+  <!-- <li id="system-manage"><button>系统管理</button></li> -->
   <li id="person-manage"><button>人力资源管理</button></li>
   <li id="salary-manage"><button>薪酬管理</button></li>
 </nav>
@@ -16,13 +16,13 @@
 </main>
 
 <script>
-  const system_manage = document.getElementById('system-manage')
+  // const system_manage = document.getElementById('system-manage')
   const person_manage = document.getElementById('person-manage')
   const salary_manage = document.getElementById('salary-manage')
 
-  system_manage.onclick = change('manage_system')
+  // system_manage.onclick = change('manage_system')
   person_manage.onclick = change('manage_person/index')
-  salary_manage.onclick = change('manage_salary')
+  salary_manage.onclick = change('manage_salary/index')
 
 
   function change (url) {

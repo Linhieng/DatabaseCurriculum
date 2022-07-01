@@ -1,0 +1,111 @@
+<p>薪酬发送单编号：10000000002</p>
+<p>机构：集团/软件公司/测试组</p>
+<p>总人数：3人，基本薪酬总额17064.00</p>
+<p>登记人：<input type="text"></p>
+<p>登记时间：2022-07-10</p>
+<button>提交</button>
+<div class="table">
+  <ul>
+    <li>档案编号</li>
+    <li>姓名</li>
+    <li>基本工资</li>
+    <li>交通补助 </li>
+    <li>午餐补助</li>
+    <li>通信补助</li>
+    <li>养老保险</li>
+    <li>失业保险</li>
+    <li>医疗保险</li>
+    <li>住房公积金</li>
+    <li>奖励奖金</li>
+    <li>应扣奖金</li>
+  </ul>
+</div>
+
+<style>
+  * {margin: 0;padding: 0;}
+  li {list-style: none;}
+
+  .table > ul {
+    display: flex;
+  }
+  .table > ul > li {
+    width: 130px;
+    height: 24px;
+    margin-top: 1px;
+    text-align: center;
+    background-color: #d4f8d4;
+    box-sizing: border-box;
+    border: 1px inset #eee;
+  }
+  .table > ul:nth-of-type(1) > li {
+    background-color: #8fdaab;
+    border-style: outset;
+  }
+</style>
+
+<script>
+
+  const data = [
+    {
+      档案编号: '2022010101',
+      姓名: '张三',
+      基本工资: '6000.00',
+      交通补助: '200.00',
+      午餐补助: '200.00',
+      通信补助: '200.00',
+      养老保险: '400.00',
+      失业保险: '25.00',
+      医疗保险: '103.00',
+      住房公积金: '400.00',
+      奖励奖金: '0.00',
+      应扣奖金: '0.00',
+    }, {
+      档案编号: '2022010102',
+      姓名: '李四',
+      基本工资: '5000.00',
+      交通补助: '150.00',
+      午餐补助: '150.00',
+      通信补助: '150.00',
+      养老保险: '240.00',
+      失业保险: '15.00',
+      医疗保险: '63.00',
+      住房公积金: '240.00',
+      奖励奖金: '0.00',
+      应扣奖金: '0.00',
+    },{
+      档案编号: '2022010103',
+      姓名: '王五',
+      基本工资: '5000.00',
+      交通补助: '200.00',
+      午餐补助: '200.00',
+      通信补助: '200.00',
+      养老保险: '400.00',
+      失业保险: '25.00',
+      医疗保险: '103.00',
+      住房公积金: '400.00',
+      奖励奖金: '0.00',
+      应扣奖金: '0.00',
+    },
+  ]
+
+  const table = document.getElementsByClassName('table')[0]
+
+  data.forEach(v => {
+    const ul = document.createElement('ul')
+    ul.innerHTML = `
+        <li>${v.档案编号}</li>
+        <li>${v.姓名}</li>
+        <li>${v.基本工资}</li>
+        <li>${v.交通补助} </li>
+        <li>${v.午餐补助}</li>
+        <li>${v.通信补助}</li>
+        <li>${v.养老保险}</li>
+        <li>${v.失业保险}</li>
+        <li>${v.医疗保险}</li>
+        <li>${v.住房公积金}</li>
+        <li>${v.奖励奖金}</li>
+        <li>${v.应扣奖金}</li>`
+
+    table.appendChild(ul)
+  })
+</script>

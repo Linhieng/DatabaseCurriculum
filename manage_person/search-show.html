@@ -1,0 +1,99 @@
+<p>符合条件的人力资源档案总数 <span id="nums"></span> 例</p>
+<div class="table">
+  <ul class="top row">
+    <li class="item">档案编号</li>
+    <li class="item">姓名</li>
+    <li class="item">性别</li>
+    <li class="item">一级机构</li>
+    <li class="item">二级机构</li>
+    <li class="item">三级机构</li>
+    <li class="item">职位名称</li>
+    <li class="item">查询</li>
+  </ul>
+  <div id="content">
+  </div>
+</div>
+
+<iframe id="iframe" src="" frameborder="0"></iframe>
+
+<style>
+  * {margin: 0; padding: 0;}
+  li {list-style: none;}
+
+  .table {
+    width: max-content;
+  }
+
+  .row {
+    display: flex;
+  }
+
+  .item {
+    width: 120px;
+    text-align: center;
+    border: 1px inset #eee;
+    background-color: #d4f8d4;
+  }
+
+  .top > .item {
+    background-color: #8fdaab;
+  }
+
+  .item.show-detail {
+    color: #4427e8;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  .item.show-detail:hover {
+    text-decoration: underline;
+  }
+
+  #iframe {
+    margin-top: 10px;
+    width: 100%;
+    height: 600px;
+  }
+
+</style>
+
+<script>
+  const data = [
+    {
+      档案编号: '201201010101',
+      姓名: '张三',
+      性别: '男',
+      一级机构: '集团',
+      二级机构: '软件公司',
+      三级机构: '外包组',
+      职位名称: '软件设计师',
+      查询: '查看明细',
+    },
+  ]
+
+  const nums = document.getElementById('nums')
+  nums.innerText = data.length
+
+  const content = document.getElementById('content')
+  data.forEach((v) => {
+    const ul = document.createElement('ul')
+    ul.classList.add('row')
+    ul.innerHTML = `
+      <li class="item">${v.档案编号}</li>
+      <li class="item">${v.姓名}</li>
+      <li class="item">${v.性别}</li>
+      <li class="item">${v.一级机构}</li>
+      <li class="item">${v.二级机构}</li>
+      <li class="item">${v.三级机构}</li>
+      <li class="item">${v.职位名称}</li>
+      <li class="item show-detail">${v.查询}</li>
+    `
+    const review = ul.getElementsByClassName('show-detail')[0]
+    review.onclick = show_detail
+    content.appendChild(ul)
+  })
+
+  function show_detail () {
+    const iframe = document.getElementById('iframe')
+    iframe.src = './show-detail.html'
+  }
+</script>

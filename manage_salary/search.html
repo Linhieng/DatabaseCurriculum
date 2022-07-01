@@ -1,0 +1,50 @@
+<h1>薪酬标准查询</h1>
+
+<button id="btn">查询</button>
+<ul class="table">
+  <li> <label>请输入薪酬标准编号</label> <input type="text" value="1000000001"> </li>
+  <li> <label>请输入关键字</label> <input type="text" value="集团"> </li>
+  <li class="li_1"> <label>请输入登记时间</label> <input type="text"> 至 <input type="text">（YYYY_MM_DD） </li>
+</ul>
+
+<iframe id="iframe" src="" frameborder="0"></iframe>
+
+<style>
+  * {margin: 0;padding: 0;}
+  li {list-style: none;}
+  iframe {width: 100%; height: 600px;}
+
+  .table {
+    background-color: #d4f8d4;
+  }
+  .table > li {
+    display: flex;
+    height: 26px;
+  }
+  li > label {
+    display: block;
+    width: 160px;
+    border: 2px outset #eee;
+    box-sizing: border-box;
+    background-color: #96e1a0;
+  }
+  li > input {
+    width: 170px;
+    height: 24px;
+    margin-left: 2px;
+    border: 2px inset #ccc;
+    background-color: #d4f8d4;
+    box-sizing: border-box;
+  }
+  li.li_1 > input {
+    width: 76px;
+  }
+
+</style>
+
+<script>
+  const btn = document.getElementById('btn')
+  btn.onclick = () => {
+    document.getElementById('iframe').src = './search-show.html'
+  }
+</script>
