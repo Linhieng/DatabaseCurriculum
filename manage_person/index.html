@@ -14,6 +14,7 @@
   <li id="enroll"><button>人力资源档案登记</button></li>
   <li id="review"><button>人力资源档案复核</button></li>
   <li id="search"><button>人力资源档案查询</button></li>
+  <li id="del"><button>人力资源档案删除</button></li>
 </nav>
 
 <main id="main">
@@ -24,10 +25,12 @@
   const enroll = document.getElementById('enroll')
   const review = document.getElementById('review')
   const search = document.getElementById('search')
+  const del = document.getElementById('del')
 
   enroll.onclick = change('enroll')
   review.onclick = change('review')
   search.onclick = change('search')
+  del.onclick = change('del')
 
   function change (url) {
     return function () {
